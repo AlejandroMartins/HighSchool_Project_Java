@@ -96,25 +96,26 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
         UsuarioDAO d = new UsuarioDAO();
-        int cont = 0, cont2 = 0;
         List<Usuario> l = d.read();
+        int cont = l.size();
         
-        TelaMenu t = new TelaMenu();
-        t.setVisible(true);
-        t.setLocationRelativeTo(null);
         
         for (Usuario usuario : l) {
             if (usuario.getName().equals(txtName.getText()) == true && usuario.getPassword().equals(txtPassword.getText()) == true) {
                 this.dispose();
-
+                TelaMenu t = new TelaMenu();
+                t.setVisible(true);
+                t.setLocationRelativeTo(null);
                 JOptionPane.showMessageDialog(null, "Seja Bem Vindo");
-            } else {
-                cont++;
+            }else{ 
+                cont--;
+            } 
+            if(cont ==  0){
+                 JOptionPane.showMessageDialog(null, "Senha ou usuário incorreto");
             }
+                
         }
-        if (cont2 == 2) {
-
-        }
+        
 
 
     }//GEN-LAST:event_btnNextActionPerformed

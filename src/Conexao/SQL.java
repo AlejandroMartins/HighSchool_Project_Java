@@ -1,4 +1,6 @@
-/*CREATE DATABASE  IF NOT EXISTS `restaurante` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+
+DROP DATABASE if exists restaurante;
+CREATE DATABASE  IF NOT EXISTS `restaurante` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `restaurante`;
 -- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
@@ -20,6 +22,11 @@ USE `restaurante`;
 --
 -- Table structure for table `compra`
 --
+
+create table usuario(
+name varchar(50),
+password varchar(50)
+);
 
 DROP TABLE IF EXISTS `compra`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -473,4 +480,3 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2023-10-01  8:26:04
-*/
